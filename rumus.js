@@ -44,6 +44,29 @@ function hitungBungaTunggal ({Mo , i , n}) {
     return Mo + bungaN
 }
 
+const calcu1 = document.getElementById('value-1');
+const calcu2 = document.getElementById('value-2');
+const pangkat = document.getElementById('pangkat');
+const btnCalc = document.getElementById('hitung-clac');
+const resultCalc = document.getElementById('result-calc');
+
+btnCalc.addEventListener('click' , function () {
+    const value = {
+        value1 : Number(calcu1.value),
+        value2 : Number(calcu2.value),
+        pangkat : Number(pangkat.value)
+    }
+    resultCalc.innerHTML = hitungKuadrat(value)
+})
+
+function hitungKuadrat ({value1 , value2 , pangkat}) {
+    let result = (value1 + value2)
+    for (let i = 1 ; i < pangkat; i++) {
+        result = result * (value1 + value2)
+    }
+    return `(${value1} + ${value2}) pangakat ${pangkat} adalah ${result}`
+}
+
 const inputs = [tabunganAwalM , presentaseM , nM , 
-tabunganAwalT , presentaseT , nT]
-const resultElement = [resultMajemuk , resultT]
+tabunganAwalT , presentaseT , nT , calcu1 , calcu2 , pangkat]
+const resultElement = [resultMajemuk , resultT , resultCalc]

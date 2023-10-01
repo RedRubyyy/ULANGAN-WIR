@@ -14,41 +14,66 @@
 <body>
     <h1 style="text-align: center;">CREATED BY N PAKE OPAL</h1>
     <div class="container">
+        <div id="box-bunga">
+            <div class="flex-form" id="bunga-tunggal-box">
+                <h1 class="form-head">BUNGA TUNGGAL</h1>
+                <input type="number" placeholder="Tabungan awal" id="Mo-t">
+                <input type="number" placeholder="Persentase bunga" id="i-t">
+                <input type="number" placeholder="N kali bunga" id="n-t">
+    
+                <button id="hitung-t">JAWABANNYA WIR</button>
+                <button id="reset-btn">RESET</button>
+                <p id="result-t" class="result"></p>
+                
+            </div>
+    
+            <div class="flex-form none" id="bunga-majemuk-box">
+                <h1 class="form-head">BUNGA MAJEMUK</h1>
+                <input type="number" placeholder="Tabungan awal" id="Mo-majemuk">
+                <input type="number" placeholder="Persentase bunga" id="i-majemuk">
+                <input type="number" placeholder="N kali bunga" id="n-majemuk">
+    
+                <button id="hitung-majemuk">JAWABANNYA WIR</button>
+                <button id="reset-btn">RESET</button>
+                <p id="result-majemuk" class="result"></p>
+                
+            </div>
+        </div>
+        <div class="flex-form none" id="calc-box">
+            <h1 class="form-head">CALC KUADRAT</h1>
+            <input type="number" placeholder="Nilai 1" id="value-1">
+            <input type="number" placeholder="Nilai 2" id="value-2">
+            <input type="number" placeholder="Pangkat" id="pangkat">
 
-        <div class="flex-form" id="bunga-tunggal-box">
-            <h1 class="form-head">BUNGA TUNGGAL</h1>
-            <input type="number" placeholder="Tabungan awal" id="Mo-t">
-            <input type="number" placeholder="Persentase bunga" id="i-t">
-            <input type="number" placeholder="N kali bunga" id="n-t">
-
-            <button id="hitung-t">JAWABANNYA WIR</button>
+            <button id="hitung-clac">JAWABANNYA WIR</button>
             <button id="reset-btn">RESET</button>
-            <p id="result-t" class="result"></p>
+            <p id="result-calc" class="result"></p>
             
         </div>
+        
 
-        <div class="flex-form none" id="bunga-majemuk-box">
-            <h1 class="form-head">BUNGA MAJEMUK</h1>
-            <input type="number" placeholder="Tabungan awal" id="Mo-majemuk">
-            <input type="number" placeholder="Persentase bunga" id="i-majemuk">
-            <input type="number" placeholder="N kali bunga" id="n-majemuk">
-
-            <button id="hitung-majemuk">JAWABANNYA WIR</button>
-            <button id="reset-btn">RESET</button>
-            <p id="result-majemuk" class="result"></p>
-            
+        <div class="absoulte-box">
+            <button class="btn-switch" id="switch">
+                <i class="fa-solid fa-repeat" style="color: #000000;"></i>
+            </button>
+            <button class="btn-switch" id="calc-btn">
+                <i class="fa-solid fa-calculator" style="color: #000000;"></i>
+            </button>
         </div>
-
-        <button class="btn-switch" id="switch">
-            <i class="fa-solid fa-repeat" style="color: #000000;"></i>
-        </button>
+        
         <script src="rumus.js"></script>
         <script>
             const boxT = document.getElementById('bunga-tunggal-box');
             const boxM = document.getElementById('bunga-majemuk-box');
+            const boxContent = document.getElementById('box-bunga') 
             const btnSwitch = document.getElementById ('switch');
 
+            const calcBtn = document.getElementById('calc-btn');
+            const calcBox = document.getElementById('calc-box');
+
             btnSwitch.addEventListener('click' , function () {
+                boxContent.classList.remove('none')
+                calcBox.classList.add('none')
                 boxT.classList.toggle('none');
                 boxM.classList.toggle('none');
                 resetValue()
@@ -70,6 +95,11 @@
                     })
                 
             }
+            
+            calcBtn.addEventListener('click' , function () {
+                boxContent.classList.add('none')
+                calcBox.classList.remove('none')
+            })
         </script>
 
     </div>
