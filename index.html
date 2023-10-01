@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPAL ULANGAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <h1 style="text-align: center;">CREATED BY N PAKE OPAL</h1>
+    <div class="container">
+
+        <div class="flex-form" id="bunga-tunggal-box">
+            <h1 class="form-head">BUNGA TUNGGAL</h1>
+            <input type="number" placeholder="Tabungan awal" id="Mo-t">
+            <input type="number" placeholder="Persentase bunga" id="i-t">
+            <input type="number" placeholder="N kali bunga" id="n-t">
+
+            <button id="hitung-t">JAWABANNYA WIR</button>
+            <button id="reset-btn">RESET</button>
+            <p id="result-t" class="result"></p>
+            
+        </div>
+
+        <div class="flex-form none" id="bunga-majemuk-box">
+            <h1 class="form-head">BUNGA MAJEMUK</h1>
+            <input type="number" placeholder="Tabungan awal" id="Mo-majemuk">
+            <input type="number" placeholder="Persentase bunga" id="i-majemuk">
+            <input type="number" placeholder="N kali bunga" id="n-majemuk">
+
+            <button id="hitung-majemuk">JAWABANNYA WIR</button>
+            <button id="reset-btn">RESET</button>
+            <p id="result-majemuk" class="result"></p>
+            
+        </div>
+
+        <button class="btn-switch" id="switch">
+            <i class="fa-solid fa-repeat" style="color: #000000;"></i>
+        </button>
+        <script src="rumus.js"></script>
+        <script>
+            const boxT = document.getElementById('bunga-tunggal-box');
+            const boxM = document.getElementById('bunga-majemuk-box');
+            const btnSwitch = document.getElementById ('switch');
+
+            btnSwitch.addEventListener('click' , function () {
+                boxT.classList.toggle('none');
+                boxM.classList.toggle('none');
+                resetValue()
+            })
+
+            const resetBtns = document.querySelectorAll('#reset-btn');
+            resetBtns.forEach(element => {
+                element.addEventListener('click' , function () {
+                    resetValue()
+                })
+            });
+
+            function resetValue () {
+                    inputs.forEach(input => {
+                        input.value = ''
+                    })
+                    resultElement.forEach(res => {
+                        res.innerHTML = ''
+                    })
+                
+            }
+        </script>
+
+    </div>
+    
+</body>
+</html>

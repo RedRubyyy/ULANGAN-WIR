@@ -1,0 +1,44 @@
+.flex-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+}
+
+input {
+    font-size: 20px;
+    padding: 3px 10px;
+    margin-bottom: 3px;
+}
+button {
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+h1  {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.result {
+    font-size: 22px;
+}
+.none {
+    display: none;
+}
+
+.btn-switch {
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 150px;
+    display: block;
+}
