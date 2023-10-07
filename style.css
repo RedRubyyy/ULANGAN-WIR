@@ -47,3 +47,14 @@ h1  {
     transform: translateX(-50%);
     margin-top: 150px;
 }
+.form-calc {
+    font-size: 25px;
+}
+
+#option-result {
+    height: 30px;
+    font-size: 15px;
+}
+option {
+    font-size: 15px;
+}

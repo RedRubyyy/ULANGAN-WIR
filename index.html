@@ -15,7 +15,7 @@
     <h1 style="text-align: center;">CREATED BY N PAKE OPAL</h1>
     <div class="container">
         <div id="box-bunga">
-            <div class="flex-form" id="bunga-tunggal-box">
+            <div class="flex-form " id="bunga-tunggal-box">
                 <h1 class="form-head">BUNGA TUNGGAL</h1>
                 <input type="number" placeholder="Tabungan awal" id="Mo-t">
                 <input type="number" placeholder="Persentase bunga" id="i-t">
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="flex-form none" id="calc-box">
-            <h1 class="form-head">CALC KUADRAT</h1>
+            <h1 class="form-calc">(NILAI1 + NILAI2) QUAD</h1>
             <input type="number" placeholder="Nilai 1" id="value-1">
             <input type="number" placeholder="Nilai 2" id="value-2">
             <input type="number" placeholder="Pangkat" id="pangkat">
@@ -48,7 +48,24 @@
             <button id="hitung-clac">JAWABANNYA WIR</button>
             <button id="reset-btn">RESET</button>
             <p id="result-calc" class="result"></p>
+        </div>
+
+        <div class="flex-form none" id="box-db">
+            <h1 class="form-head">DERET DAN BARIS</h1>
+            <input type="number" placeholder="Masukkan nilai a" id="A">
+            <input type="number" placeholder="Masukkan nilai b / r" id="B">
+            <input type="number" placeholder="Masukkan nilai n" id="N">
+
+            <select name="" style="margin-top: 20px;" id="option-result">
+                <option value="HITUNG SUKU KE-N (ARITMATIKA)">HITUNG SUKU KE-N  (ARITMATIKA)</option>
+                <option value="HITUNG SUKU KE-N (GEOMETRI)">HITUNG SUKU KE-N  (GEOMETRI)</option>
+                <option value="HITUNG N SUKU PERTAMA (GEOMETRI)">HITUNG N SUKU PERTAMA (GEOMETRI)</option>
+                <option value="HITUNG N SUKU PERTAMA (ARITMATIKA)">HITUNG N SUKU PERTAMA (ARITMATIKA)</option>
+            </select>
             
+            <button id="hitung-db">JAWABANNYA WIR</button>
+
+            <p class="result" id="result-db"></p>
         </div>
         
 
@@ -59,9 +76,13 @@
             <button class="btn-switch" id="calc-btn">
                 <i class="fa-solid fa-calculator" style="color: #000000;"></i>
             </button>
+            <button class="btn-switch" id="deret-barisan">
+                <i class="fa-solid fa-list-ol" style="color: #000000;"></i>
+            </button>
         </div>
         
         <script src="rumus.js"></script>
+        <script src="dbcalculate.js"></script>
         <script>
             const boxT = document.getElementById('bunga-tunggal-box');
             const boxM = document.getElementById('bunga-majemuk-box');
@@ -71,8 +92,31 @@
             const calcBtn = document.getElementById('calc-btn');
             const calcBox = document.getElementById('calc-box');
 
+            const btnDB = document.getElementById('deret-barisan');
+            const boxDB = document.getElementById('box-db');
+            const btnRessDb = document.getElementById('hitung-db');
+            const resultDb = document.getElementById('result-db');
+            btnRessDb.addEventListener('click' , function () {
+                const a = document.getElementById('A');
+                const b = document.getElementById('B');
+                const n = document.getElementById('N');
+                const args = {
+                    a : Number(a.value),
+                    b : Number(b.value),
+                    n : Number(n.value)
+                }
+                const calulateThis = inner (args)
+                const result = calulateThis()
+                resultDb.innerHTML = result.message
+            })
+            btnDB.addEventListener('click' , function () {
+                boxContent.classList.add('none')
+                calcBox.classList.add('none')
+                boxDB.classList.remove('none')
+            })
             btnSwitch.addEventListener('click' , function () {
                 boxContent.classList.remove('none')
+                boxDB.classList.add('none')
                 calcBox.classList.add('none')
                 boxT.classList.toggle('none');
                 boxM.classList.toggle('none');
@@ -97,10 +141,12 @@
             }
             
             calcBtn.addEventListener('click' , function () {
+                boxDB.classList.add('none')
                 boxContent.classList.add('none')
                 calcBox.classList.remove('none')
             })
         </script>
+        
 
     </div>
     
