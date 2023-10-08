@@ -23,6 +23,7 @@ input::-webkit-inner-spin-button {
 h1  {
     font-size: 2rem;
     font-weight: 400;
+    text-align: center;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -45,7 +46,7 @@ h1  {
     width: fit-content;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 150px;
+    bottom: 120px;
 }
 .form-calc {
     font-size: 25px;
@@ -57,4 +58,30 @@ h1  {
 }
 option {
     font-size: 15px;
+}
+.animetion-form {
+    animation: animation-form 0.7s ;
+    animation-fill-mode: forwards;
+}
+@keyframes animation-form {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+footer {
+    font-family: 'Roboto', sans-serif;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: #B4B4B3;
 }
