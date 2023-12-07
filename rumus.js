@@ -19,7 +19,7 @@ function hitungBungaMajemuk ({Mo , i , n}) {
     for (let k = 1 ; k < n; k++) {
         nKali = nKali * (i + 1)
     }
-    return nKali * Mo
+    return (nKali.toFixed(3) * Mo).toFixed(2)
 }
 
 
@@ -40,7 +40,7 @@ buttonT.addEventListener('click' , function () {
 })
 
 function hitungBungaTunggal ({Mo , i , n}) {
-    const bungaN = Mo * (i * n)
+    const bungaN = (n * (i * Mo)).toFixed(3)
     return Mo + bungaN
 }
 
@@ -64,7 +64,7 @@ function hitungKuadrat ({value1 , value2 , pangkat}) {
     for (let i = 1 ; i < pangkat; i++) {
         result = result * (value1 + value2)
     }
-    return `(${value1} + ${value2}) pangakat ${pangkat} adalah ${result}`
+    return `(${value1} + ${value2}) pangakat ${pangkat} adalah ${result.toFixed(3)}`
 }
 
 const inputs = [tabunganAwalM , presentaseM , nM , 
