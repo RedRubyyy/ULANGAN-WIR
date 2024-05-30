@@ -1,87 +1,12 @@
-.flex-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
+.display-data {
+    max-width: 576px;
     margin: auto;
 }
 
-input {
-    font-size: 20px;
-    padding: 3px 10px;
-    margin-bottom: 3px;
-}
-button {
-    margin-top: 10px;
-    font-size: 20px;
-    padding: 5px 10px;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-h1  {
-    font-size: 2rem;
-    font-weight: 400;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-}
-
-.result {
-    font-size: 22px;
-}
-.none {
-    display: none;
-}
-
-.btn-switch {
-    text-align: center;
-    margin: 0 10px;
-    font-size: 24px;
-    display: block;
-}
-.absoulte-box{
-    position: absolute;
-    display: flex;
-    width: fit-content;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 120px;
-}
-.form-calc {
-    font-size: 25px;
-}
-
-#option-result {
-    height: 30px;
-    font-size: 15px;
-}
-option {
-    font-size: 15px;
-}
-.animetion-form {
-    animation: animation-form 0.7s ;
-    animation-fill-mode: forwards;
-}
-@keyframes animation-form {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0px);
-    }
+.main-container {
+    min-height: 100vh;
 }
 
 footer {
-    font-family: 'Roboto', sans-serif;
-    left: 50%;
-    transform: translateX(-50%);
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    text-align: center;
-    padding: 10px;
-    background: #B4B4B3;
 }

@@ -3,152 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPAL ULANGAN</title>
+    <title>ULANGAN COY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <h1 style="text-align: center;">WAYAHE ULANGAN WIR</h1>
-    <div class="container">
-        <div id="box-bunga">
-            <div class="flex-form animetion-form" id="bunga-tunggal-box">
-                <h1 class="form-head">BUNGA TUNGGAL</h1>
-                <input type="number" placeholder="Tabungan awal" id="Mo-t">
-                <input type="number" placeholder="Persentase bunga" id="i-t">
-                <input type="number" placeholder="N kali bunga" id="n-t">
-    
-                <button id="hitung-t">JAWABANNYA WIR</button>
-                <button id="reset-btn">RESET</button>
-                <p id="result-t" class="result"></p>
+<body style="background: #94a3b8;">
+    <div class="container-md main-container">
+        <div class="display-data pt-4">
+            <h1 class="fs-4">Data overview</h1>
+            <div class="input-group mb-3">
+                <input disabled type="text" id="data-overview-x" class="form-control mx-auto" placeholder="Independent data not yet">    
+                <span class="input-group-text" id="basic-addon2">Independent X</span>
+            </div>
+            <div class="input-group mb-3">
+                <input disabled type="text" id="data-overview-y" class="form-control mx-auto" placeholder="Dependent data not yet">
+                <span class="input-group-text" id="basic-addon2">Dependent Y</span>
+            </div>
+            <!-- <input disabled type="text" id="data-overview-x" class="form-control mx-auto" placeholder="Independent data not yet"> -->
+            <!-- <input disabled type="text" id="data-overview-y" class="form-control mx-auto mt-2" placeholder="Dependent data not yet"> -->
+            <div id="emailHelp" class="form-text">Independent and dependent data must be filled in and the numbers must be the same.</div>
+            <button class="btn btn-danger mt-4" id="reset-data-btn">Reset All Data</button>
+        </div>
+
+
+        <form class="display-data mt-5" onsubmit="event.preventDefault()">
+            <h1 class="fs-4">Data Input</h1>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="data-input" placeholder="Data input : 84x9 | 84">
+                <div id="emailHelp" class="form-text">You can use x and numbers for a lot of data to be calculated (ondevloping)</div>
+            </div>
+            <div class="d-flex justify-content-start">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle me-3" id="calculated-option-btn" data-bs-toggle="dropdown" aria-expanded="false" disabled>Create Result</button>
+                    <ul class="dropdown-menu">
+                      <li><button class="dropdown-item btn-calculate" >SSxx</button></li>
+                      <li><button class="dropdown-item btn-calculate" >SSyy</button></li>
+                      <li><button class="dropdown-item btn-calculate" >SSxy</button></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle me-3" data-bs-toggle="dropdown" aria-expanded="false">Add data</button>
+                    <ul class="dropdown-menu">
+                      <li><button class="dropdown-item" id="btn-add-independent">Independent</button></li>
+                      <li><button class="dropdown-item" id="btn-add-dependent">Dependent</button></li>
+                    </ul>
+                </div>
                 
             </div>
-    
-            <div class="flex-form none animetion-form" id="bunga-majemuk-box">
-                <h1 class="form-head">BUNGA MAJEMUK</h1>
-                <input type="number" placeholder="Tabungan awal" id="Mo-majemuk">
-                <input type="number" placeholder="Persentase bunga" id="i-majemuk">
-                <input type="number" placeholder="N kali bunga" id="n-majemuk">
-    
-                <button id="hitung-majemuk">JAWABANNYA WIR</button>
-                <button id="reset-btn">RESET</button>
-                <p id="result-majemuk" class="result"></p>
-                
-            </div>
-        </div>
-        <div class="flex-form none animetion-form" id="calc-box">
-            <h1 class="form-calc">(NILAI1 + NILAI2) QUAD</h1>
-            <input type="number" placeholder="Nilai 1" id="value-1">
-            <input type="number" placeholder="Nilai 2" id="value-2">
-            <input type="number" placeholder="Pangkat" id="pangkat">
-
-            <button id="hitung-clac">JAWABANNYA WIR</button>
-            <button id="reset-btn">RESET</button>
-            <p id="result-calc" class="result"></p>
-        </div>
-
-        <div class="flex-form none animetion-form" id="box-db">
-            <h1 class="form-head">DERET DAN BARIS</h1>
-            <input type="number" placeholder="Masukkan nilai a" id="A">
-            <input type="number" placeholder="Masukkan nilai b / r" id="B">
-            <input type="number" placeholder="Masukkan nilai n" id="N">
-
-            <select name="" style="margin-top: 20px;" id="option-result">
-                <option value="HITUNG SUKU KE-N (ARITMATIKA)">HITUNG SUKU KE-N  (ARITMATIKA)</option>
-                <option value="HITUNG SUKU KE-N (GEOMETRI)">HITUNG SUKU KE-N  (GEOMETRI)</option>
-                <option value="HITUNG N SUKU PERTAMA (GEOMETRI)">HITUNG N SUKU PERTAMA (GEOMETRI)</option>
-                <option value="HITUNG N SUKU PERTAMA (ARITMATIKA)">HITUNG N SUKU PERTAMA (ARITMATIKA)</option>
-            </select>
-            
-            <button id="hitung-db">JAWABANNYA WIR</button>
-
-            <p class="result" id="result-db"></p>
-        </div>
+            <h1 class="fs-5 mt-3" id="result-string">Result : </h1>
+        </form>
         
-
-        <div class="absoulte-box">
-            <button class="btn-switch" id="switch">
-                <i class="fa-solid fa-repeat" style="color: #000000;"></i>
-            </button>
-            <button class="btn-switch" id="calc-btn">
-                <i class="fa-solid fa-calculator" style="color: #000000;"></i>
-            </button>
-            <button class="btn-switch" id="deret-barisan">
-                <i class="fa-solid fa-list-ol" style="color: #000000;"></i>
-            </button>
-        </div>
-        <footer>CREATED WITH <i class="fa-solid fa-heart" style="color: #000000;"></i> BY N PAKE OPAL</footer>
-        <script src="rumus.js"></script>
-        <script src="dbcalculate.js"></script>
-        <script>
-            const boxT = document.getElementById('bunga-tunggal-box');
-            const boxM = document.getElementById('bunga-majemuk-box');
-            const boxContent = document.getElementById('box-bunga') 
-            const btnSwitch = document.getElementById ('switch');
-
-            const calcBtn = document.getElementById('calc-btn');
-            const calcBox = document.getElementById('calc-box');
-
-            const btnDB = document.getElementById('deret-barisan');
-            const boxDB = document.getElementById('box-db');
-            const btnRessDb = document.getElementById('hitung-db');
-            const resultDb = document.getElementById('result-db');
-            btnRessDb.addEventListener('click' , function () {
-                const a = document.getElementById('A');
-                const b = document.getElementById('B');
-                const n = document.getElementById('N');
-                const args = {
-                    a : Number(a.value),
-                    b : Number(b.value),
-                    n : Number(n.value)
-                }
-                const calulateThis = inner (args)
-                const result = calulateThis()
-                resultDb.innerHTML = result.message
-            })
-            btnDB.addEventListener('click' , function () {
-                boxContent.classList.add('none')
-                calcBox.classList.add('none')
-                boxDB.classList.remove('none')
-            })
-            btnSwitch.addEventListener('click' , function () {
-                boxContent.classList.remove('none')
-                boxDB.classList.add('none')
-                calcBox.classList.add('none')
-                boxT.classList.toggle('none');
-                boxM.classList.toggle('none');
-                resetValue()
-            })
-
-            const resetBtns = document.querySelectorAll('#reset-btn');
-            resetBtns.forEach(element => {
-                element.addEventListener('click' , function () {
-                    resetValue()
-                })
-            });
-
-            function resetValue () {
-                    inputs.forEach(input => {
-                        input.value = ''
-                    })
-                    resultElement.forEach(res => {
-                        res.innerHTML = ''
-                    })
-                
-            }
-            
-            calcBtn.addEventListener('click' , function () {
-                boxDB.classList.add('none')
-                boxContent.classList.add('none')
-                calcBox.classList.remove('none')
-            })
-        </script>
-        
-
+        <footer class="fixed-bottom text-center py-2 bg-primary text-light">Created by Nopal the starboy</footer>
     </div>
     
+    <script src="element-query.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
